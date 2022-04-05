@@ -223,7 +223,7 @@ public final class Float extends Number
      * @return a string representation of the argument.
      */
     public static String toString(float f) {
-        return FloatingDecimal.toJavaFormatString(f);
+        return jdk.internal.math.fastdoubletostring.FloatToDecimal.toString(f);
     }
 
     /**

@@ -309,7 +309,7 @@ public final class Double extends Number
      * @return a string representation of the argument.
      */
     public static String toString(double d) {
-        return FloatingDecimal.toJavaFormatString(d);
+        return jdk.internal.math.fastdoubletostring.DoubleToDecimal.toString(d);
     }
 
     /**
