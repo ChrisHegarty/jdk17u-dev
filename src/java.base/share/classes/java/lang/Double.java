@@ -648,7 +648,13 @@ public final class Double extends Number
      * @since 1.2
      */
     public static double parseDouble(String s) throws NumberFormatException {
-        return FloatingDecimal.parseDouble(s);
+        double d;
+        try {
+            d = jdk.internal.math.fastdoubleparser.FastDoubleParser.parseDouble(s);
+        } catch (NumberFormatException nfe) {
+            return FloatingDecimal.parseDouble(s);
+        }
+        return d;
     }
 
     /**
